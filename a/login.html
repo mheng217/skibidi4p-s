@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #fef5e7;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .login-container {
+        background: rgba(0, 31, 63, 0.95);
+        padding: 40px 30px;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        color: white;
+        backdrop-filter: blur(6px);
+        transition: 0.3s ease;
+      }
+
+      .login-container h2 {
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .login-container input,
+      .login-container button {
+        width: 100%;
+        max-width: 100%;
+        padding: 14px;
+        margin: 12px 0;
+        border-radius: 10px;
+        font-size: 15px;
+        box-sizing: border-box;
+      }
+
+      .login-container input {
+        border: none;
+        background: #fefefe;
+        color: #333;
+      }
+
+      .login-container input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #ffd700;
+      }
+
+      .login-container button {
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        background-color: #ffd700;
+        color: #001f3f;
+      }
+
+      .login-container button:hover {
+        background-color: #ffc300;
+      }
+
+      .signup-btn {
+        background-color: #00d1b2;
+        color: white;
+      }
+
+      .signup-btn:hover {
+        background-color: #00b89c;
+      }
+
+      .link {
+        margin-top: 15px;
+        display: block;
+        color: #ffd700;
+        text-decoration: none;
+      }
+
+      .divider {
+        margin: 25px 0;
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>🔐 Đăng nhập</h2>
+      <input type="text" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Mật khẩu" />
+      <button onclick="login()">Đăng nhập</button>
+
+      <a class="link" href="#">Quên mật khẩu?</a>
+
+      <div class="divider">— hoặc —</div>
+
+      <button class="signup-btn" onclick="window.location.href='signup.html'">
+        Tạo tài khoản mới
+      </button>
+    </div>
+
+    <script>
+      function login() {
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+        if (!gmailRegex.test(email)) {
+          alert("Email phải là Gmail hợp lệ!");
+          return;
+        }
+
+        if (password.length < 8) {
+          alert("Mật khẩu phải có ít nhất 8 ký tự!");
+          return;
+        }
+
+        const savedPassword = localStorage.getItem("user_" + email);
+        const displayName = localStorage.getItem("name_" + email);
+
+        if (savedPassword === password) {
+          localStorage.setItem("loggedInUser", email);
+          localStorage.setItem("displayName", displayName || "Người dùng");
+          alert("Đăng nhập thành công!");
+          window.location.href = "index.html";
+        } else {
+          alert("Sai email hoặc mật khẩu!");
+        }
+      }
+    </script>
+  </body>
+</html>

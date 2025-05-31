@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang chủ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="overflow: hidden">
+    <div id="loading-screen">
+      <div class="loading-content">
+        <img src="cook.gif" alt="Mascot" class="loading-img" />
+        <h1 class="loading-text">
+          Loading<span class="dot dot1">.</span><span class="dot dot2">.</span
+          ><span class="dot dot3">.</span>
+        </h1>
+      </div>
+    </div>
+
+    <section class="video-section">
+      <video autoplay muted loop playsinline>
+        <source src="bgvd.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <header class="header">
+        <div class="headerInner">
+          <h1 class="headerLogo">
+            <a href="index.html" class="headerLogo_link">
+              <span class="textLogo">Skibidi 4P’S</span>
+              <span class="textSub">VIETNAM</span>
+            </a>
+          </h1>
+
+          <nav class="headerNav">
+            <a class="headerNav_link" href="index2 .html" target="_self">
+              <span class="icon"></span>
+              <span>Menu</span>
+            </a>
+            <a class="headerNav_link" href="tags.html" target="_self">
+              <span class="icon"></span>
+              <span>Tags</span>
+            </a>
+            <a class="headerNav_link" href="#" onclick="toggleUserDropdown()">
+              <div class="avatar-circle">👤</div>
+              <div
+                class="user-dropdown"
+                id="userDropdown"
+                style="display: none; user-select: none"
+              >
+                <p id="dropdown-username">Tài khoản</p>
+                <a href="favourite.html" id="link-fav">Mục yêu thích</a>
+                <a href="login.html" id="link-login">Đăng nhập</a>
+                <a href="signup.html" id="link-signup">Đăng ký</a>
+                <a
+                  href="#"
+                  onclick="logout()"
+                  id="link-logout"
+                  style="display: none"
+                  >Đăng xuất</a
+                >
+              </div>
+            </a>
+
+            <div class="user-menu" id="userMenu" style="display: none"></div>
+            <div class="menuToggle js-menuToggle">
+              <span></span><span></span><span></span>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <nav class="mobileMenu" id="mobileMenu">
+        <ul>
+          <li>
+            <a href="index2 .html" target="_blank">Thực đơn chính</a>
+          </li>
+          <li>
+            <a href="tags.html" target="_blank">Tags</a>
+          </li>
+          <li
+            id="mobileAccountName"
+            style="
+              display: none;
+              color: black;
+              font-weight: bold;
+              padding: 8px 16px;
+            "
+          >
+            Tài khoản
+          </li>
+          <li><a href="favourite.html" id="mobileFav">Mục yêu thích</a></li>
+          <li>
+            <a href="login.html" class="auth-link-mobile" id="mobileLogin"
+              >Đăng nhập</a
+            >
+          </li>
+          <li>
+            <a href="signup.html" class="auth-link-mobile" id="mobileSignup"
+              >Đăng ký</a
+            >
+          </li>
+          <li>
+            <a href="#" onclick="logout()" id="mobileLogout">Đăng xuất</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="video-overlay">
+        <h1>Welcome to Skibidi 4P's</h1>
+      </div>
+    </section>
+
+    <div class="button-wrapper">
+      <div class="background-slideshow">
+        <img src="bún chả.jpg" class="bg-slide active" />
+        <img src="phở bò.jpeg" class="bg-slide" />
+        <img src="trà trái cây.png" class="bg-slide" />
+        <img src="bánh su kem.webp" class="bg-slide" />
+        <img src="bruschetta.jpg" class="bg-slide" />
+        <img src="bánh mousse.jpg" class="bg-slide" />
+        <img src="súp bí đỏ.jpg" class="bg-slide" />
+        <img src="tra-dao-cam-sa.jpg" class="bg-slide" />
+        <img src="sinh-to-dua-hau-dau.jpg" class="bg-slide" />
+        <img src="bánh flan.jpg" class="bg-slide" />
+      </div>
+      <button onclick="window.location.href='index2 .html'">View Menu</button>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Về Chúng Tôi</h3>
+          <p>
+            Chào mừng bạn đến với Skibidi 4P's! Nơi chia sẻ đam mê ẩm thực và
+            cung cấp những công thức nấu ăn ngon, dễ làm từ khắp nơi trên thế
+            giới. Chúng tôi mong muốn truyền cảm hứng cho bạn trong căn bếp và
+            giúp bạn tạo ra những bữa ăn tuyệt vời cho gia đình và bạn bè.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Liên Hệ</h3>
+          <p>Địa chỉ: Dương Quảng Hàm, Quan Hoa, Cầy Giấy</p>
+          <p>Điện thoại: (028) 1234 5678</p>
+          <p>Email: info@skibidi4ps.com</p>
+        </div>
+        <div class="footer-section">
+          <h3>Theo Dõi Chúng Tôi</h3>
+          <ul class="social-icons">
+            <li>
+              <a href="https://www.facebook.com/"
+                ><img
+                  src="logo fb.png"
+                  alt="Facebook"
+                  style="height: 40px; width: 40px"
+              /></a>
+            </li>
+            <li>
+              <a href="https://x.com/"
+                ><img
+                  src="logo tw.png"
+                  alt="Twitter"
+                  style="height: 40px; width: 40px"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/accounts/login/?hl=en"
+                ><img
+                  src="logo ig.png"
+                  alt="Instagram"
+                  style="height: 40px; width: 40px"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Skibidi 4P's. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
